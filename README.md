@@ -10,7 +10,8 @@ PDDP.py: contains the algorithm to perform PDDP with different splitting criteri
 PDDPNode.py: contains the definition of PDDP node, which is used to form a PDDP tree
 selection_criteria.py: contains methods for variants on how to select next cluster to split
 spliting_criteria.py: contains methods and their helper methods for variants on how to split a selected cluster
-helpers.py: contains helper methods used throughout the repo 
+helpers.py: contains helper methods used throughout the repo
+matrix.in: a sample input file that can be used in main method of PDDP.py
 
 HOW TO USE
 --------------------
