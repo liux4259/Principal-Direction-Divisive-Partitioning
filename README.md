@@ -12,7 +12,8 @@ selection_criteria.py: contains methods for variants on how to select next clust
 spliting_criteria.py: contains methods and their helper methods for variants on how to split a selected cluster
 helpers.py: contains helper methods used throughout the repo 
 
-HOW TO USE:
+HOW TO USE
+--------------------
 You can either import pddp from PDDP.py to use it directly in your application. The PDDP.py also includes a main method, which 
 can be used by command line. The command arguments are as follows:
 
