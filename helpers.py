@@ -2,7 +2,6 @@
 import numpy as np
 from scipy.sparse import csc_matrix, linalg
 from sklearn.feature_extraction.text import TfidfTransformer
-import os
 
 from PDDPNode import PDDPNode
 

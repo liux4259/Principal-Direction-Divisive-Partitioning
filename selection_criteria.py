@@ -49,11 +49,11 @@ def sparse(leafs):
     Find the cluster with the most sparse area
 
     :param leafs: the list of clusters to compare
-    :return max_sparsity: the density estimation of the most sparse area
-    :return max_node: the node with lowest density estimation
+    :return min_density: the density estimation of the most sparse area
+    :return min_node: the node with lowest density estimation
     """
-    max_sparsity = -float(np.inf)
-    max_node = None
+    min_density = float(np.inf)
+    min_node = None
     for node in leafs:
         # Here we use field “scat" to store the density because we will not use the real scatter value
         if node.scat == -1:
@@ -61,11 +61,11 @@ def sparse(leafs):
             sparsity, rightval = find_cutoff_sparse(node)
             node.scat = sparsity
             node.index = rightval
-        if node.scat > max_sparsity:
-            max_sparsity = node.scat
-            max_node = node
+        if node.scat < min_density:
+            min_density = node.scat
+            min_node = node
 
-    return max_sparsity, max_node
+    return min_density, min_node
 
 
 def even(leafs):

@@ -59,8 +59,11 @@ def sparse_cut(max_node):
     p_indices = max_node.indices
     p_rightvec = max_node.rightvec
 
-    left_indices = [p_indices[j] for j, ele in enumerate(p_rightvec) if ele >= max_rightval]
-    right_indices = [p_indices[j] for j, ele in enumerate(p_rightvec) if ele < max_rightval]
+    print(max_rightval)
+    print(max(p_rightvec))
+
+    left_indices = [p_indices[j] for j, ele in enumerate(p_rightvec) if ele <= max_rightval]
+    right_indices = [p_indices[j] for j, ele in enumerate(p_rightvec) if ele > max_rightval]
 
     return left_indices, right_indices
 
@@ -357,16 +360,16 @@ def find_cutoff_sparse(node):
     :return max_rightval: the right singular value, which is the projection, corresponds to max sparsity value
     :return max_index: the index of document corresponding to max sparsity
     """
-    max_sparse = -np.inf
-    max_rightval = -1
+    min_density = np.inf
+    min_rightval = -1
     right_vec = node.rightvec
     for j in range(len(node.indices)):
-        sparse = _density(right_vec[j], right_vec)
-        if sparse > max_sparse:
-            max_sparse = sparse
-            max_rightval = right_vec[j]
+        dens = _density(right_vec[j], right_vec)
+        if dens < min_density:
+            min_density = dens
+            min_rightval = right_vec[j]
 
-    return max_sparse, max_rightval
+    return min_density, min_rightval
 
 
 def _multivariate_kernel(x):

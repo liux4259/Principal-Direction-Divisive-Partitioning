@@ -24,8 +24,8 @@ def pddp(ms_raw, n_clusters, representation='tfidf', split='origin', tol=0.01):
 
     :param ms_raw: input csc matrix to perform PDDP algorithm
     :param n_clusters: desired number of clusters
-    :param representation: representation of the input matrix
-    :param split: splitting criteria
+    :param representation: representation of the data matrix. Should be either tfidf or norm_freq
+    :param split: splitting criteria. Available options: gap, origin, kmeans, scatter, scatter_project, even
     :param tol: tolerance of scatter value to stop splitting
     :return leafs: clusters created by PDDP algorithm
     :return root: the root of the PDDP tree
