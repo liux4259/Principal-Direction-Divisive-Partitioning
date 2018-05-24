@@ -6,16 +6,16 @@ https://link.springer.com/article/10.1023/A:1009740529316
 LIST OF FILES
 --------------------
 PDDP.py: contains the algorithm to perform PDDP with different splitting criteria. The cluster selection criteria is fixed:
-         it chooses the cluster with largest scatter value (Frobenius norm) to split next
+         it chooses the cluster with largest scatter value (Frobenius norm) to split next <br />
 iPDDP.py: contains the algorithm to perform iPDDP, which is based on maximum gap. At each iteration, the algorithm selects
-         the cluster with largest gap in it, and split the selected cluster at the maximum gap
+         the cluster with largest gap in it, and split the selected cluster at the maximum gap <br />
 ePDDP.py: contains the algorithm to perform ePDDP, which tries to create even partition. At each iteration, the algorithm
-         selects the cluster with the most data points in it, and split the cluster evenly in the projected space.
-PDDPNode.py: contains the definition of PDDP node, which is used to form a PDDP tree
-selection_criteria.py: contains methods for variants on how to select next cluster to split
-spliting_criteria.py: contains methods and their helper methods for variants on how to split a selected cluster
-helpers.py: contains helper methods used throughout the repo
-matrix.in: a sample input file that can be used in main method of PDDP.py
+         selects the cluster with the most data points in it, and split the cluster evenly in the projected space <br />
+PDDPNode.py: contains the definition of PDDP node, which is used to form a PDDP tree <br />
+selection_criteria.py: contains methods for variants on how to select next cluster to split <br />
+spliting_criteria.py: contains methods and their helper methods for variants on how to split a selected cluster <br />
+helpers.py: contains helper methods used throughout the repo <br />
+matrix.in: a sample input file that can be used in main method of PDDP.py <br />
 
 HOW TO USE
 --------------------
